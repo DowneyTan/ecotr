@@ -3,11 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="ECO-TR: Efficient Correspondences Finding Via Coarse-to-Fine Refinement">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ECO-TR: Efficient Correspondences Finding Via Coarse-to-Fine Refinement</title>
+  <style>
+  #template {
+          background: #fff;
+          padding: 1rem;
+          border-radius: 7px;
+          /* box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13); */
+          box-sizing:border-box;
+          align-self: center;
+          text-align: center;
+          /* height: 25vh; */
+          display: grid;
+          width: 80%;
+          /* grid-gap:20px 20px; */
+          grid-gap: 0.5rem;
+      }
+  .template-1col {
+    /* grid-template-rows: auto; */
+    grid-template: repeat(1, 1fr)/repeat(3, 1fr);
+    grid-auto-flow: row;
+  }
+  .template-3col {
+    /* grid-template-rows: auto; */
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    grid-auto-flow: row;
+  }
+  .template-2col-2row {
+    /* grid-template-rows: auto; */
+    grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+    grid-auto-flow: row;
+  }
+  .template-2col {
+    /* grid-template-rows: auto; */
+    grid-template: repeat(1, 1fr)/repeat(2, 1fr);
+    grid-auto-flow: row;
+  }
 
+  </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
@@ -50,36 +85,6 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
-
-      <!-- <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div> -->
-    </div>
-
-  </div>
 </nav>
 
 
@@ -88,7 +93,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CO-TR: Efficient Correspondences Finding Via 
+          <h1 class="title is-1 publication-title">ECO-TR: Efficient Correspondences Finding Via 
             Coarse-to-Fine Refinement</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -162,15 +167,16 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="colabdemo_link"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
-                  </a> -->
+                  <span>Demo</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -180,22 +186,6 @@
   </div>
 </section>
 
-<!-- <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4" -->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="127.0.0.1"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
 
 <!-- 
 <section class="hero is-light is-small">
@@ -257,11 +247,22 @@
 
 
 <section class="section">
-  <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
+
+        <div class="container is-max-desktop">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <img id="teaser" src="./static/pics/pipeline.png">
+              </img>
+              <h2 class="subtitle has-text-centered">
+                Pipeine of ECO-TR
+              </h2>
+            </div>
+          </div>
+        </div>
         <div class="content has-text-justified">
           <p>
             Modeling sparse and dense image matching within a unified 
@@ -287,132 +288,165 @@
           <p>
             Experimental comparisons on various 
             sparse and dense matching tasks demonstrate the superiority of our method 
-            on both efficiency and effectiveness against existing state-of-the-arts.
+            on both efficiency and effectiveness against existing functional matching methods.
           </p>
         </div>
       </div>
     </div>
+  </div>
+</section>
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
+        <h2 class="title is-3">Cross </h2>
         <div class="publication-video">
           <iframe src="xxx"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
-    <!--/ Paper video. -->
+    </div> -->
+
+
+<!-- <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4" -->
+<section class="hero teaser">
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Matches across different numbers of queries</h2>
   </div>
+  <div id="template" class="template-1col">
+    <div class="col"><img src="./static/pics/1000_grids.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+                </div>
+    <div class="col"><img src="./static/pics/4000_grids.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+                </div>
+    <div class="col"><img src="./static/pics/8000_grids.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    </div>
+
+    <div id="template" class="template-3col">
+    <div class="col"><img src="./static/pics/1000_grids_2.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/4000_grids_2.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/8000_grids_2.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/1000_grids_3.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/4000_grids_3.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/8000_grids_3.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/1000_grids_4.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/4000_grids_4.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+    <div class="col"><img src="./static/pics/8000_grids_4.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/></div>
+  </div>
+
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div> -->
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div> -->
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Matches under different conditions</h2>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
     <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+      <!-- <div id="template" class="template-2col-2row"> -->
+      <div id = "template" class="template">
+        <div class="col"><img src="./static/pics/day_night.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."/>
+        </div>
+        <div>day night</div>
+        <div class="col"><img src="./static/pics/sketch_photo.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."/>
+        </div>
+        <div>sketch</div>
+        <div class="col"><img src="./static/pics/NIR_photo.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."/>
+        </div>
+        <div>NIR(Near Infrared) image</div>
+      </div>
+    <!--/ Paper video. -->
+  </div>
+  </section>
 
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/> -->
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Dense alignment</h2>
+      </div>
+      <div></div>
+
+      <div class="title is-3"></div>
+      <div class="columns is-centered">
+        <!-- <div id="template" class="template-2col-2row"> -->
+        <div id = "template" class="template-2col">
+          <div class="col"><img src="./static/pics/jn_photo.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+          <div class="col"><img src="./static/pics/jn_sketch.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
         </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div id = "template" class="template">
+          <div class="col"><img src="./static/pics/jn_sketch_photo_matches_alignment.png"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <!-- Animation. -->
+    <!-- <div class="columns is-centered"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Optical flow estimation</h2>
+      </div>
         <div class="content has-text-centered">
           <video id="replay-video"
                  controls
                  muted
                  preload
                  playsinline
-                 width="75%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/replay.mp4"
+                 width="100%">
+            <source src="static/videos/flows.mp4"
                     type="video/mp4">
           </video>
-        </div> -->
-        <!--/ Re-rendering. -->
+        </div>
+        <!--/  -->
 
       </div>
     </div>
-    <!--/ Animation. -->
+  </section>
 
 
     <!-- Concurrent Work. -->
@@ -450,6 +484,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{
+
   <!-- park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
