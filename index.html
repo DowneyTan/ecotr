@@ -97,40 +97,40 @@
             Coarse-to-Fine Refinement</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="">Dongli Tan</a><sup>*13</sup>,</span>
+              <div href="">Dongli Tan<sup>*13</sup>,</div></span>
             <span class="author-block">
-              <a href="">Jiangjiang Liu</a><sup>*23</sup>,</span>
+              <div href="">Jiangjiang Liu<sup>*23</sup>,</div></span>
             <span class="author-block">
-              <a href="">Xingyu Chen</a><sup>3</sup>,
+              <div href="">Xingyu Chen<sup>3</sup>,</div>
             </span>
             <span class="author-block">
-              <a href="">Chao Chen</a><sup>3</sup>,
+              <div href="">Chao Chen<sup>3</sup>,</div>
             </span>
             <span class="author-block">
-              <a href="">Ruixin Zhang</a><sup>3</sup>,
+              <div href="">Ruixin Zhang<sup>3</sup>,</div>
             </span>
             <span class="author-block">
-              <a href="">Yunhang Shen</a><sup>3</sup>,
+              <div href="">Yunhang Shen<sup>3</sup>,</div>
             </span>
             <span class="author-block">
-              <a href="">Shouhong Ding</a><sup>3</sup>
+              <div href="">Shouhong Ding<sup>3</sup>,</div>
             </span>
             <span class="author-block">
-              <a href="">Rongrong Ji</a><sup>1</sup>
+              <div href="">Rongrong Ji<sup>1</sup></div>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Xiamen University</span>
             <span class="author-block"><sup>2</sup>Nankai University</span>
-            <span class="author-block"><sup>3</sup>Youtu Lab, Tencent</span>
+            <span class="author-block"><sup>3</sup>Youtu Lab, Tencent Co.,Ltd </span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/123123"
+                <a href="https://arxiv.org/pdf/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -139,7 +139,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/123123"
+                <a href="https://arxiv.org/abs/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -148,7 +148,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/123123"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -156,7 +156,7 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://drive.google.com/file/d/14sBwxmFLMszV-SDdrFmHfg8EuEfIfaPg/view?usp=sharing"
@@ -258,7 +258,14 @@
               <img id="teaser" src="./static/pics/pipeline.png">
               </img>
               <h2 class="subtitle has-text-centered">
-                Pipeine of ECO-TR
+                Pipeline of ECO-TR
+              </h2>
+            </div>
+            <div class="hero-body">
+              <img id="teaser" src="./static/pics/speed_comparison.png">
+              </img>
+              <h2 class="subtitle has-text-centered">
+                Comparison of the inference time between the proposed ECO-TR and COTR
               </h2>
             </div>
           </div>
@@ -312,7 +319,7 @@
 <!-- <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4" -->
 <section class="hero teaser">
   <div class="columns is-centered has-text-centered">
-    <h2 class="title is-3">Matches across different numbers of queries</h2>
+    <h2 class="title is-3">Matches across different density of queries</h2>
   </div>
   <div id="template" class="template-1col">
     <div class="col"><img src="./static/pics/1000_grids.png"
@@ -366,6 +373,7 @@
     <div class="columns is-centered has-text-centered">
       <h2 class="title is-3">Matches under different conditions</h2>
     </div>
+      <!-- <div>Same with COTR, we train the model on Megadepth dataset and test its cross domain</div> -->
     <div class="columns is-centered">
       <!-- <div id="template" class="template-2col-2row"> -->
       <div id = "template" class="template">
@@ -445,6 +453,50 @@
         <!--/  -->
 
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">IMC(Image matching challenge)2022</h2>
+      </div>
+      <div></div>
+
+      <div class="title is-3"></div>
+      <div class="columns is-centered">
+        <!-- <div id="template" class="template-2col-2row"> -->
+        <div id = "template" class="template-2col">
+          <div class="col"><img src="./static/pics/IMW_report1.png"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+          <div class="col"><img src="./static/pics/IMW_report2.png"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+
+      <div>
+      ECO-TR consists of multiple refinement modules of different levels, which can be used in a plug-and-play manner to refine the matches of various existing methods. 
+      Our solution got a golden medal (5th place out of 642 teams) in <a href="https://www.kaggle.com/competitions/image-matching-challenge-2022">IMC2022</a>. More 
+      details of our solution can be found <a href="https://www.kaggle.com/competitions/image-matching-challenge-2022/discussion/329334">here</a>.
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Online demo</h2>
+      </div>
+      
+      <div>
+      We provide an <a href="https://">online demo</a> in colab.
+      </div>
+
     </div>
   </section>
 
