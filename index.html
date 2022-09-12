@@ -171,9 +171,10 @@
               <span class="link-block">
                 <a href="colabdemo_link"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
+                   <span class="icon"> 
+                   <!-- <svg style="color: white" role="img" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><title>Google Colab</title>                 <path d="M16.9414 4.9757a7.033 7.033 0 0 0-4.9308 2.0646 7.033 7.033 0 0 0-.1232 9.8068l2.395-2.395a3.6455 3.6455 0 0 1 5.1497-5.1478l2.397-2.3989a7.033 7.033 0 0 0-4.8877-1.9297zM7.07 4.9855a7.033 7.033 0 0 0-4.8878 1.9316l2.3911 2.3911a3.6434 3.6434 0 0 1 5.0227.1271l1.7341-2.9737-.0997-.0802A7.033 7.033 0 0 0 7.07 4.9855zm15.0093 2.1721l-2.3892 2.3911a3.6455 3.6455 0 0 1-5.1497 5.1497l-2.4067 2.4068a7.0362 7.0362 0 0 0 9.9456-9.9476zM1.932 7.1674a7.033 7.033 0 0 0-.002 9.6816l2.397-2.397a3.6434 3.6434 0 0 1-.004-4.8916zm7.664 7.4235c-1.38 1.3816-3.5863 1.411-5.0168.1134l-2.397 2.395c2.4693 2.3328 6.263 2.5753 9.0072.5455l.1368-.1115z" fill="red"></path></svg> --> 
+                      <i class="fas fa-terminal"></i>
+                   </span>
                   <span>Demo</span>
                   </a>
               </span>
@@ -251,25 +252,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-
-        <div class="container is-max-desktop">
-          <div class="container is-max-desktop">
-            <div class="hero-body">
-              <img id="teaser" src="./static/pics/pipeline.png">
-              </img>
-              <h2 class="subtitle has-text-centered">
-                Pipeline of ECO-TR
-              </h2>
-            </div>
-            <div class="hero-body">
-              <img id="teaser" src="./static/pics/speed_comparison.png">
-              </img>
-              <h2 class="subtitle has-text-centered">
-                Comparison of the inference time between the proposed ECO-TR and COTR
-              </h2>
-            </div>
-          </div>
-        </div>
+        
         <div class="content has-text-justified">
           <p>
             Modeling sparse and dense image matching within a unified 
@@ -278,6 +261,13 @@
             improving matching accuracy while ignoring its efficiency,
             which is crucial for real-world applications.
           </p>
+          <div class="hero-body">
+            <img id="teaser" src="./static/pics/pipeline.png">
+            </img>
+            <h4 class="subtitle has-text-centered">
+              Pipeline of ECO-TR
+            </h4>
+          </div>
           <p>
             In this paper, 
             we propose an efficient structure named Efficient Correspondence 
@@ -292,12 +282,20 @@
             outlier detection module to cooperate with the proposed framework for 
             faster and better predictions. 
           </p>
+          <div class="hero-body">
+              <img id="teaser" src="./static/pics/speed_comparison.png">
+              </img>
+              <h4 class="subtitle has-text-centered">
+                Comparison of the inference time between the proposed ECO-TR and COTR
+              </h4>
+          </div>
           <p>
             Experimental comparisons on various 
             sparse and dense matching tasks demonstrate the superiority of our method 
             on both efficiency and effectiveness against existing functional matching methods.
           </p>
         </div>
+
       </div>
     </div>
   </div>
@@ -456,6 +454,70 @@
     </div>
   </section>
 
+
+  <section class="section">
+    <!-- Animation. -->
+    <!-- <div class="columns is-centered"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Reconstruction From two views </h2>
+      </div>
+
+      <div class="columns is-centered">
+        <!-- <div id="template" class="template-2col-2row"> -->
+        <div id = "template" class="template-2col">
+          <div class="col"><img src="./static/pics/recon0_img_0.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+          <div class="col"><img src="./static/pics/recon0_img_1.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+
+      <div class="content has-text-centered">
+        <video id="replay-video"
+               controls
+               muted
+               preload
+               playsinline
+               width="50%">
+          <source src="static/videos/recon0.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+      <div class="columns is-centered">
+        <!-- <div id="template" class="template-2col-2row"> -->
+        <div id = "template" class="template-2col">
+          <div class="col"><img src="./static/pics/recon1_img_0.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+          <div class="col"><img src="./static/pics/recon1_img_1.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+
+      <div class="content has-text-centered">
+        <video id="replay-video"
+               controls
+               muted
+               preload
+               playsinline
+               width="50%">
+          <source src="static/videos/recon1.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -536,7 +598,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{
-
+  update later
   <!-- park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
@@ -563,7 +625,7 @@
         <div class="content">
           <p>
             Thanks to <a rel="nerfies"
-            href="https://nerfies.github.io/">nerfies</a> for the website template. 
+            href="https://nerfies.github.io/">nerfies</a> for the website template. Thanks for the generous support from authors of <a herf="https://github.com/ubc-vision/COTR">COTR</a> during this work.
           </p>
 
         </div>
